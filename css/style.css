@@ -1010,10 +1010,10 @@ main .content {
 .menu-page .content {
   /* 個別p共通のカードを消す */
   background: none;
-  padding-inline: 0rem;
+  padding: 0;
 
   @media (min-width: 768px) {
-    padding-inline: 0rem;
+    padding: 0;
     box-shadow: none;
   }
 }
