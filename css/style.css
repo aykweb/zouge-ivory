@@ -1072,19 +1072,16 @@ main .content {
 }
 
 .menu-desc h3 {
-  /* font-size: var(--fs-md); */
   color: var(--color-accent);
   margin-bottom: 0.5rem;
 }
 
 .menu-desc p {
-  font-size: var(--fs-base);
   line-height: var(--lh-base);
   margin-bottom: 0.5rem;
 }
 
 .price {
-  font-size: var(--fs-md);
   font-weight: 700;
   color: var(--color-accent);
 }
