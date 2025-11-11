@@ -24,7 +24,7 @@
     // トップページ判定（GitHub Pages のサブパス対応）
     // location.pathname: /リポジトリ名/ または /リポジトリ名/index.html
     const path = location.pathname;
-    const repoName = "/リポジトリ名"; // ←ここを自分のリポジトリ名に書き換える
+    const repoName = "/zouge-ivory"; // ←ここを自分のリポジトリ名に書き換える
     const isTop =
       path === "/" ||
       path === `${repoName}/` ||
