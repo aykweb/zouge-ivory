@@ -16,18 +16,14 @@
     open.classList.remove("hide");
   });
 
-  document.addEventListener("DOMContentLoaded", function () {
+  window.addEventListener("load", function () {
     // スクロール位置をリロード時に復元しない
     window.history.scrollRestoration = "manual";
     window.scrollTo(0, 0);
 
-    // トップページ判定（GitHub Pages サブパス対応）
+    // トップページ判定（GitHub Pages 対応）
     const path = location.pathname;
-    const repoName = "/リポジトリ名"; // ←自分のリポジトリ名に書き換える
-    const isTop =
-      path === "/" ||
-      path === `${repoName}/` ||
-      path.endsWith("index.html");
+    const isTop = path.endsWith("/") || path.endsWith("index.html");
     if (!isTop) return;
 
     const siteTitle = document.querySelector(".site-title");
@@ -39,15 +35,12 @@
       return;
     }
 
-    let observer; // IntersectionObserver は不要になりましたが保持する場合
-
-    // H1下端基準フェードアウト処理
+    // フェードアウト判定関数
     function handleScrollFade() {
-      const siteRect = siteTitle.getBoundingClientRect();
-      const heroRect = heroBg.getBoundingClientRect();
+      const heroBottom = heroBg.getBoundingClientRect().bottom + window.scrollY;
+      const titleBottom = siteTitle.offsetTop + siteTitle.offsetHeight + window.scrollY;
 
-      // siteTitle の下端が heroBg の下端に触れたらフェードアウト
-      if (siteRect.bottom <= heroRect.bottom) {
+      if (titleBottom >= heroBottom) {
         siteTitle.classList.add("fade-out");
         header.classList.add("scrolled");
       } else {
@@ -58,4 +51,45 @@
 
     // リサイズ判定
     function handleResize() {
-      if
+      if (window.innerWidth >= 768) {
+        // PC版ならスクロールイベント登録
+        window.addEventListener("scroll", handleScrollFade);
+        handleScrollFade(); // 初回判定
+      } else {
+        // モバイル版では解除
+        window.removeEventListener("scroll", handleScrollFade);
+        siteTitle.classList.remove("fade-out");
+        header.classList.remove("scrolled");
+      }
+    }
+
+    // 初期化
+    handleResize();
+    window.addEventListener("resize", handleResize);
+
+    // to-topボタン
+    const toTop = document.querySelector(".to-top");
+    if (toTop) {
+      toTop.style.opacity = "0";
+      toTop.style.pointerEvents = "none";
+      toTop.style.transition = "opacity 0.3s ease-in-out";
+
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > window.innerHeight / 2) {
+          toTop.style.opacity = "1";
+          toTop.style.pointerEvents = "auto";
+        } else {
+          toTop.style.opacity = "0";
+          toTop.style.pointerEvents = "none";
+        }
+      });
+
+      toTop.addEventListener("click", (e) => {
+        e.preventDefault();
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth",
+        });
+      });
+    }
+  });
