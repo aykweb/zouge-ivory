@@ -16,50 +16,60 @@
     open.classList.remove("hide");
   });
 
-  window.addEventListener("load", function () {
+  document.addEventListener("DOMContentLoaded", function () {
     // スクロール位置をリロード時に復元しない
     window.history.scrollRestoration = "manual";
     window.scrollTo(0, 0);
 
-    // トップページ判定（GitHub Pages 対応）
+    // トップページ判定（GitHub Pages のサブパス対応）
+    // location.pathname: /リポジトリ名/ または /リポジトリ名/index.html
     const path = location.pathname;
-    const isTop = path.endsWith("/") || path.endsWith("index.html");
+    const repoName = "/リポジトリ名"; // ←ここを自分のリポジトリ名に書き換える
+    const isTop =
+      path === "/" ||
+      path === `${repoName}/` ||
+      path.endsWith("index.html");
     if (!isTop) return;
 
     const siteTitle = document.querySelector(".site-title");
     const header = document.querySelector(".header--top");
     const heroBg = document.querySelector(".hero-bg");
 
-    if (!siteTitle || !header || !heroBg) {
+    if (!heroBg || !siteTitle || !header) {
       console.warn("必要な要素が取得できませんでした");
       return;
     }
 
-    // フェードアウト判定関数
-    function handleScrollFade() {
-      const heroBottom = heroBg.getBoundingClientRect().bottom + window.scrollY;
-      const titleBottom = siteTitle.offsetTop + siteTitle.offsetHeight + window.scrollY;
+    let observer;
 
-      if (titleBottom >= heroBottom) {
-        siteTitle.classList.add("fade-out");
-        header.classList.add("scrolled");
-      } else {
-        siteTitle.classList.remove("fade-out");
-        header.classList.remove("scrolled");
-      }
+    // Observer初期化関数
+    function initObserver() {
+      if (observer) observer.disconnect();
+
+      observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (!entry.isIntersecting) {
+              siteTitle.classList.add("fade-out");
+              header.classList.add("scrolled");
+            } else {
+              siteTitle.classList.remove("fade-out");
+              header.classList.remove("scrolled");
+            }
+          });
+        },
+        { threshold: 0 }
+      );
+
+      observer.observe(heroBg);
     }
 
     // リサイズ判定
     function handleResize() {
       if (window.innerWidth >= 768) {
-        // PC版ならスクロールイベント登録
-        window.addEventListener("scroll", handleScrollFade);
-        handleScrollFade(); // 初回判定
-      } else {
-        // モバイル版では解除
-        window.removeEventListener("scroll", handleScrollFade);
-        siteTitle.classList.remove("fade-out");
-        header.classList.remove("scrolled");
+        initObserver();
+      } else if (observer) {
+        observer.disconnect();
       }
     }
 
@@ -93,3 +103,4 @@
       });
     }
   });
+}
