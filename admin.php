@@ -6,17 +6,39 @@ $reservations = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
   <meta charset="UTF-8">
   <title>予約管理</title>
   <style>
-    body { font-family: sans-serif; padding: 2rem; }
-    table { border-collapse: collapse; width: 100%; }
-    th, td { border: 1px solid #ccc; padding: 0.5rem 1rem; text-align: left; }
-    th { background: #f5f5f5; }
-    tr:nth-child(even) { background: #fafafa; }
+    body {
+      font-family: sans-serif;
+      padding: 2rem;
+      font-size: 14px;
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    th,
+    td {
+      border: 1px solid #ccc;
+      padding: 0.5rem 1rem;
+      text-align: left;
+    }
+
+    th {
+      background: #f5f5f5;
+    }
+
+    tr:nth-child(even) {
+      background: #fafafa;
+    }
   </style>
 </head>
+
 <body>
   <h1>予約一覧</h1>
   <?php if (empty($reservations)): ?>
@@ -30,9 +52,9 @@ $reservations = $stmt->fetchAll(PDO::FETCH_ASSOC);
           <th>人数</th>
           <th>日付</th>
           <th>時間</th>
-          <th>車椅子</th>
           <th>メモ</th>
           <th>受付日時</th>
+          <th>削除</th>
         </tr>
       </thead>
       <tbody>
@@ -43,13 +65,19 @@ $reservations = $stmt->fetchAll(PDO::FETCH_ASSOC);
             <td><?= htmlspecialchars($r['people']) ?>名</td>
             <td><?= htmlspecialchars($r['date']) ?></td>
             <td><?= htmlspecialchars($r['time']) ?></td>
-            <td><?= $r['wheelchair'] ? 'あり' : 'なし' ?></td>
             <td><?= htmlspecialchars($r['memo']) ?></td>
             <td><?= htmlspecialchars($r['created_at']) ?></td>
+            <td>
+              <form method="post" action="admin_delete.php" onsubmit="return confirm('削除しますか？')">
+                <input type="hidden" name="id" value="<?= htmlspecialchars($r['id']) ?>">
+                <button type="submit">削除する</button>
+              </form>
+            </td>
           </tr>
         <?php endforeach; ?>
       </tbody>
     </table>
   <?php endif; ?>
 </body>
+
 </html>

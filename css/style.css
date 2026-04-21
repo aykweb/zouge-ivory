@@ -40,8 +40,6 @@ img {
   --lh-base: 1.6;
   --lh-loose: 1.8;
 
-  /* --shadow-lv1: 0 2px 4px rgba(90, 62, 47, 0.08); */
-
   --shadow-lv1: 2px 4px 4px -2px rgba(90, 62, 47, 0.08);
   --shadow-lv2: 0 4px 8px rgba(90, 62, 47, 0.15);
 
