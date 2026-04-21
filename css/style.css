@@ -264,7 +264,7 @@ footer,
 .overlay.show li {
   opacity: 1;
   transform: none;
-  transition-delay: calc(var(--i) * 0.05s + 0.1s);
+  transition-delay: calc(var(--i) * 0.05s + 0.15s);
 }
 
 /* スクロール禁止 */
@@ -383,7 +383,7 @@ body.top-page .titles * {
   .pc-menu ul {
     display: flex;
     height: var(--h-header);
-    gap: 1em;
+    column-gap: 1em;
   }
 
   .pc-menu li {
@@ -398,7 +398,7 @@ body.top-page .titles * {
     align-items: center;
     justify-content: center;
     height: 100%;
-    row-gap: 0.75em;
+    row-gap: 0.6em;
     padding-inline: 2em;
     padding-top: 0.4em;
     white-space: nowrap;
@@ -406,6 +406,8 @@ body.top-page .titles * {
   }
 
   .pc-menu a>* {
+    width: 4.5rem;
+    text-align: center;
     line-height: 1;
     letter-spacing: 0.03rem;
   }
@@ -453,7 +455,7 @@ body.top-page .titles * {
         rgba(70, 59, 47, 0.7));
     box-shadow: 0 1px 4px rgba(255, 255, 255, 0.05);
     border-radius: 8px;
-    width: clamp(500px, 66%, 640px);
+    width: clamp(480px, 60%, 540px);
     position: fixed;
     top: 150%;
     left: 50%;
@@ -483,7 +485,7 @@ body.top-page .titles * {
   }
 
   header.is-initial .pc-menu .en {
-    font-size: 0.75rem;
+    font-size: 0.8rem;
     text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
     font-weight: 500;
   }
@@ -995,6 +997,7 @@ body:not(.top-page) li {
 .menu-page .tab-btn.is-active {
   background: var(--c-sub-base);
   z-index: 20;
+  cursor: default;
 }
 
 
@@ -1049,8 +1052,8 @@ body:not(.top-page) li {
   margin-inline: auto;
   margin-bottom: 2rem;
 
-    @media (min-width: 768px) {
-  margin-bottom: 0rem;
+  @media (min-width: 768px) {
+    margin-bottom: 0rem;
   }
 }
 
@@ -1098,8 +1101,9 @@ body:not(.top-page) li {
   font-size: var(--fs-base);
   line-height: var(--lh-base);
   margin-top: 2rem;
-    @media (min-width: 768px) {
-  margin-top: 1rem;
+
+  @media (min-width: 768px) {
+    margin-top: 1rem;
   }
 }
 
@@ -1199,8 +1203,8 @@ body:not(.top-page) li {
 
 /* 共通 */
 .form-page .content>p {
-  font-size: var(--fs-base);
-  margin-top: 0.5rem;
+  font-size: var(--fs-sm);
+  margin-top: 1rem;
 }
 
 .form-page form {
@@ -1307,6 +1311,12 @@ body:not(.top-page) li {
   }
 }
 
+/* 送信完了ページ */
+.form-page .return-home {
+  margin-top: 2.5rem;
+}
+
+
 /* contactのみ */
 .form-page .note {
   color: var(--c-sub-text);
@@ -1399,12 +1409,12 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   border-bottom: 1px dashed var(--c-accent-2);
 }
 
-.article-nav {
+.return-home {
   text-align: center;
-  margin-top: 3rem;
+  margin-top: 6rem;
 }
 
-.article-nav a {
+.return-home a {
   display: inline-block;
   font-weight: 600;
   font-size: var(--fs-sm);
@@ -1419,7 +1429,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 }
 
 @media (hover: hover) {
-  .article-nav a:hover {
+  .return-home a:hover {
     background: var(--c-accent-2);
     color: var(--c-card-bg);
   }

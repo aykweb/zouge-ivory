@@ -4,10 +4,16 @@
   "info.php" => "店舗情報",
   "about.php" => "こだわり",
   "reserve.php" => "ご予約",
+  "contact.php" => "お問い合わせ",
+
+  "reserve_complete.php" => "受付完了｜ご予約",
+  "contact_complete.php" => "送信完了｜お問い合わせ",
+
   "bike-parking.php" => "駐輪場のご案内｜お知らせ",
   "stamp-2509.php" => "9月の営業日とスタンプ2倍の日｜お知らせ",
   "stamp-2510.php" => "10月の営業日とスタンプ2倍の日｜お知らせ",
   "stamp-2511.php" => "11月の営業日とスタンプ2倍の日｜お知らせ",
+  "start-reservation.php" => "ウェブでのご予約が可能になりました｜お知らせ",
 ];
 $currentFile = basename($_SERVER['PHP_SELF']);
 $pageTitle = $pageTitle ?? ($pageMap[$currentFile] ?? "にゅうめんや 象牙");
@@ -109,6 +115,7 @@ $pageDescription = $pageDescription ?? "東小金井駅から徒歩3分。「に
           <li style="--i: 2"><a href="/menu.php">Menu</a></li>
           <li style="--i: 3"><a href="/info.php">Info</a></li>
           <li style="--i: 4"><a href="/reserve.php">Reserve</a></li>
+          <li style="--i: 5"><a href="/contact.php">Contact</a></li>
         </ul>
       </nav>
     </div>

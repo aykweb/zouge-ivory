@@ -13,7 +13,7 @@
           <li><a href="/menu.php">お品書き</a></li>
           <li><a href="/info.php">店舗情報</a></li>
           <li><a href="/reserve.php">ご予約</a></li>
-          <li><a href="/contact.php">お問合せ</a></li>
+          <li><a href="/contact.php">お問い合わせ</a></li>
         </ul>
       </nav>
       <address class="footer-sp-info">

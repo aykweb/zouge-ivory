@@ -6,10 +6,8 @@ include(__DIR__ . "/includes/header.php");
   <section class="form-page container">
     <h2>ご予約</h2>
     <div class="content">
-      <p>ウェブでのご予約は前日までにお願いいたします。<br>ご予約可能時間は20時までとなります。</p>
-      <p>
-        お電話での受付も可能です。<br>
-        TEL: 042-123-4567
+      <h3>注意事項</h3>
+      <p class="separator-bottom">ウェブでのご予約は前日までにお願いいたします。<br>ご予約可能時間は20時までとなります。
       </p>
 
       <form method="post" action="reserve_send.php">

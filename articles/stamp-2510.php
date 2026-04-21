@@ -26,7 +26,7 @@ include(__DIR__ . "/../includes/header.php");
           </p>
         </div>
       </article>
-      <nav class="article-nav">
+      <nav class="return-home">
         <a href="/">TOPへ戻る</a>
       </nav>
     </div>
