@@ -20,7 +20,7 @@ http://ss323733.stars.ne.jp/index.php
 - **phpMyAdmin**
 - **macOS**
 - **VS Code**
-- **GitHub** : 履歴管理
+- **GitHub** : 履歴管理用
 
 ## 制作のポイント
 - **予約システムの構築**  

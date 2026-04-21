@@ -58,7 +58,7 @@
   </svg>
 </a>
 <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
-<script src="/zouge-ivory/js/script.js"></script>
+<script src="/js/script.js"></script>
 </body>
 
 </html>

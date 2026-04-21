@@ -39,7 +39,7 @@ $pageDescription = $pageDescription ?? "東小金井駅から徒歩3分。「に
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
-  <link rel="stylesheet" href="/zouge-ivory/css/style.css">
+  <link rel="stylesheet" href="/css/style.css">
 </head>
 
 
