@@ -75,7 +75,7 @@ $pageDescription = $pageDescription ?? "東小金井駅から徒歩3分。「に
       </h1>
 
       <div class="pc-menu">
-        <nav>
+        <nav aria-label="メインナビゲーション">
           <ul>
             <li><a href="/about.php">
                 <span class="ja">こだわり</span>
@@ -108,7 +108,7 @@ $pageDescription = $pageDescription ?? "東小金井駅から徒歩3分。「に
     </div>
 
     <div class="overlay">
-      <nav>
+      <nav aria-label="モバイルナビゲーション">
         <ul>
           <li style="--i: 0"><a href="/index.php">Top</a></li>
           <li style="--i: 1"><a href="/about.php">About</a></li>
