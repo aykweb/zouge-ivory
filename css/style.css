@@ -262,7 +262,7 @@ footer,
   display: inline-flex;
   flex-direction: column;
   gap: 2.25em 0;
-  padding: 2rem 4rem;
+  padding: 1rem 4rem;
   margin-top: var(--h-header);
 }
 
@@ -970,9 +970,14 @@ body:not(.top-page) main li,
 }
 
 .about__commitment figcaption {
-  font-size: var(--fs-base);
+  font-size: var(--fs-sm);
+
   text-align: center;
   line-height: var(--lh-loose);
+
+  @media (min-width: 768px) {
+    font-size: var(--fs-base);
+  }
 }
 
 /* ============ menu ============ */
