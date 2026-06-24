@@ -1003,7 +1003,7 @@ body:not(.top-page) main li,
   gap: 0.5rem;
   box-sizing: border-box;
   /* 影の調整 */
-  padding-block: 1.5rem calc(1.5rem + 4px);
+  padding-block: 1.25rem calc(1.25rem + 4px);
   border: none;
   background: #F0EDE7;
   border-radius: 8px 8px 0 0;
@@ -1018,7 +1018,7 @@ body:not(.top-page) main li,
 }
 
 .menu-page .tab-btn span {
-  font-size: var(--fs-md);
+  font-size: var(--fs-base);
   color: var(--c-sub-text);
 }
 
@@ -1139,19 +1139,19 @@ body:not(.top-page) main li,
 .drink__item {
   gap: 0.75rem;
   margin-top: 1rem;
-  padding-inline: 2rem;
   text-align: left;
 
   @media (min-width: 768px) {
     grid-template-columns: 1fr 1fr;
     gap: 1rem 2rem;
+    padding-inline: 2rem;
   }
 }
 
 .drink__item li {
+  position: relative;
   padding-block: 0.5rem;
   padding-left: 1.5rem;
-  white-space: nowrap;
   border-bottom: 1px solid var(--c-separator);
 
   @media (min-width: 768px) {
