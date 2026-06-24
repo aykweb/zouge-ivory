@@ -1151,11 +1151,11 @@ body:not(.top-page) main li,
 .drink__item li {
   padding-block: 0.5rem;
   padding-left: 1.5rem;
-  position: relative;
   white-space: nowrap;
   border-bottom: 1px solid var(--c-separator);
 
   @media (min-width: 768px) {
+    white-space: nowrap;
     font-size: var(--fs-base);
   }
 }
