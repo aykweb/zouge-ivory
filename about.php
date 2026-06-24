@@ -23,7 +23,8 @@ include(__DIR__ . "/includes/header.php");
         <h3>気疲れしない食事</h3>
         <figure>
           <img src="/images/interior.jpg" alt="落ち着いた雰囲気の店内カウンター" width="640" height="480">
-          <figcaption>忙しいとき、間食がほしいとき、体をいたわりたいとき。<br>当店をご活用ください。<figcaption>
+          <figcaption>忙しいとき、間食がほしいとき、<br>
+          体をいたわりたいとき。<br>ぜひ当店をご活用ください。<figcaption>
         </figure>
       </article>
     </div>
