@@ -31,8 +31,6 @@
       });
     }
 
-
-
     // --- メニューページ：タブ切り替え ---
     const tabBtns = document.querySelectorAll(".tab-btn");
     const lunch = document.querySelector("#lunch");
@@ -77,21 +75,21 @@
 
     // --- トップページ（pc）：ヘッダー切替 ---
     const header = document.querySelector(".top-page header");
-    if (!header) return;
-
-    function handleScroll() {
-      if (window.innerWidth >= 768 && window.scrollY < 240) {
-        header.classList.add("is-initial");
-      } else {
-        header.classList.remove("is-initial");
+    if (header) {
+      function handleScroll() {
+        if (window.innerWidth >= 768 && window.scrollY < 240) {
+          header.classList.add("is-initial");
+        } else {
+          header.classList.remove("is-initial");
+        }
       }
-    }
 
-    // スクロール時と画面サイズ変更時に実行
-    window.addEventListener('scroll', handleScroll);
-    window.addEventListener('resize', handleScroll);
-    // 初回読み込み時にも実行
-    handleScroll();
+      // スクロール時と画面サイズ変更時に実行
+      window.addEventListener('scroll', handleScroll);
+      window.addEventListener('resize', handleScroll);
+      // 初回読み込み時にも実行
+      handleScroll();
+    }
 
     // --- 上端に戻るボタン ---
     const toTop = document.querySelector(".to-top");
