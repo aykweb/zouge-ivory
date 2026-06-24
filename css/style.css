@@ -147,7 +147,7 @@ footer,
 
 @media (hover: hover) {
   .btn-submit:hover {
-    opacity: 0.85;
+    opacity: 0.8;
   }
 }
 
@@ -1243,18 +1243,25 @@ body:not(.top-page) main li,
   display: block;
   max-width: 600px;
   width: 100%;
-  height: 3rem;
-  padding-inline: 1rem;
+  padding: 0.25rem 0.75rem;
   margin-top: 0.5rem;
   font: inherit;
+  letter-spacing: 0.06em;
   background: #ffffff;
   border: 2px solid rgba(90, 62, 47, 0.25);
   border-radius: 0.5rem;
 }
 
+.form-page input,
+.form-page select {
+  min-height: 3rem;
+  line-height: 1.4;
+}
+
 /* 複数行入力 */
 .form-page textarea {
   min-height: 7.5rem;
+  line-height: 1.6;
 }
 
 /* フォーカス時 */
