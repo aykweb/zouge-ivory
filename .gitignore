@@ -1,0 +1,7 @@
+.DS_Store
+Thumbs.db
+db.php
+.htaccess
+.htpasswd
+admin.php
+admin_delete.php
