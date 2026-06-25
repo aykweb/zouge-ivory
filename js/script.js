@@ -14,6 +14,7 @@
       body.classList.toggle('is-menu-open');
       const isOpen = overlay.classList.contains('show');
       trigger.setAttribute('aria-expanded', isOpen);
+      trigger.setAttribute('aria-label', isOpen ? 'メニューを閉じる' : 'メニューを開く');
     });
   }
 

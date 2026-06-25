@@ -100,7 +100,7 @@ $pageDescription = $pageDescription ?? "東小金井駅から徒歩3分。「に
         </nav>
       </div>
 
-      <div id="menu-trigger" class="menu-btn" aria-expanded="false" aria-controls="overlay">
+      <div id="menu-trigger" class="menu-btn" aria-expanded="false" aria-controls="overlay" aria-label="メニューを開く">
         <span></span>
         <span></span>
         <span></span>
